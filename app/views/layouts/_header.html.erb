@@ -13,7 +13,17 @@
         <a class="nav-link" href="#"></a>
       </li>
        <% if user_signed_in? %>
-        <li class="nav-item dropdown ">
+        
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><%= link_to "New Post",new_post_path %> <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"></a>
+      </li>
+      <li class="nav-item dropdown ">
          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Account
           </a>
@@ -23,9 +33,6 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#"><%= link_to('Log Out', destroy_user_session_path, :method => :delete)%></a>
         </div>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#"><%= link_to "New Post",new_post_path %> <span class="sr-only">(current)</span></a>
       </li>
       <% end %>
        <% if !user_signed_in? %>
@@ -39,8 +46,13 @@
        <li class="nav-item">
         <a class="nav-link" href="#"><%= link_to "Login", new_user_session_path %></a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><%= link_to "Facebook Login", new_user_session_path %></a>
+      </li>
       <% end %>
-    </ul>
-    
+    </ul>    
   </div>
 </nav>
